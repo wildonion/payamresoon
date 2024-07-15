@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  sms-consumer:
+    container_name: sms-consumer
+    image: docker.levino.ir/sms-consumer
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    restart: unless-stopped
+    ports:
+      - "5063:8080"
